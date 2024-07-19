@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 const express = require("express");
 const csrf = require("tiny-csrf");
 const app = express();
@@ -84,7 +82,7 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-// Define routes
+// routes
 app.get('/', (req, res) => {
   res.render('index', { title: 'Sports Scheduler' });
 });
