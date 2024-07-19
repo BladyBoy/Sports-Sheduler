@@ -11,7 +11,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #4a90e2, #007aff);
+            background: linear-gradient(to right, rgba(74, 145, 226, 0.382), rgba(0, 123, 255, 0.371)),
+                url('https://t3.ftcdn.net/jpg/05/32/57/30/360_F_532573032_XeFcG5HojuT8bMYnaKrPv70o4Nulwxwd.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
             margin: 0;
             padding: 20px;
@@ -27,11 +29,11 @@
             align-items: center;
             max-width: 1200px;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             padding: 40px;
-            gap: 40px; /* Add space between containers */
+            gap: 40px;
         }
 
         .info-container, .button-container {
@@ -47,13 +49,22 @@
         .info-container h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            color: #e1e1e1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.87);
+            border-radius: 10px;
+            text-align: center  ;
+            color: #0066d3;
+            text-shadow: 02px 02px 4px rgba(0, 255, 162, 0.5);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
         }
 
         .info-container h2 {
             font-size: 1.5rem;
-            color: #a1c4fd;
+            color: #000a1a;
+            text-shadow: 02px 02px 05px #370aed;
+            font-style: italic;
+            font-size: large;
+            text-align: center;
         }
 
         .button-container {
