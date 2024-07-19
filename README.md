@@ -1,6 +1,6 @@
 # Sports Scheduler
 
-As part of my capstone project, I developed a Node.js application called **Sports Scheduler**. This application allows administrators to manage sports and participants to create and join sports sessions.
+This is my capstone project of Full Stack Web Development, as part it, I developed a full stack web application called **Sports Scheduler** using express.js node.js and postgresql. This application allows administrators(Admin) to create and manage sports and participants to create and join sports sessions.
 
 ## Features
 
