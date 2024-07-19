@@ -13,15 +13,17 @@ As part of my capstone project, I developed a Node.js application called **Sport
   - View upcoming and past sessions.
 
 ## Screenshots
-![Index of Sports Scheduler](https://drive.google.com/file/d/1FIDOh4S0zYX_aA6G2YKSuP_l03pgyZZn/view?usp=drive_link)
-![Signup Page](https://drive.google.com/file/d/10XgAL6sbVEy9aU1dqjTlQ5uXcEY0Vv9D/view?usp=drive_link)
-![Homepage of Sports Scheduler](https://drive.google.com/file/d/1v2u8ir0ZlZ2RMtUtDNshqL0Q0ohP-UQa/view?usp=drive_link)
-![Creating a new Sport](https://drive.google.com/file/d/1oJ9UATZmfkI96SeE2p5GVPcSqleIzF60/view?usp=drive_link)
-![Create a Session](https://drive.google.com/file/d/1Iv0z1yR7pkbm6vm473ZR1N-romuBuSif/view?usp=drive_link)
-![Session Details](https://drive.google.com/file/d/1FcUbXBSY56jzDeKnA_Xvh_x-d9YI_Y7H/view?usp=drive_link)
+
+![Index of Sports Scheduler](https://drive.google.com/uc?export=view&id=1FIDOh4S0zYX_aA6G2YKSuP_l03pgyZZn)
+![Signup Page](https://drive.google.com/uc?export=view&id=10XgAL6sbVEy9aU1dqjTlQ5uXcEY0Vv9D)
+![Homepage of Sports Scheduler](https://drive.google.com/uc?export=view&id=1v2u8ir0ZlZ2RMtUtDNshqL0Q0ohP-UQa)
+![Creating a new Sport](https://drive.google.com/uc?export=view&id=1oJ9UATZmfkI96SeE2p5GVPcSqleIzF60)
+![Create a Session](https://drive.google.com/uc?export=view&id=1Iv0z1yR7pkbm6vm473ZR1N-romuBuSif)
+![Session Details](https://drive.google.com/uc?export=view&id=1FcUbXBSY56jzDeKnA_Xvh_x-d9YI_Y7H)
 
 ## Live Application
 
+[Link to the live URL](https://srija-sports-scheduler-j8vm.onrender.com)
 
 ## Installation and Setup
 
