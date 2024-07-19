@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<%= csrfToken %>">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title><%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+        function deleteSport(id) {
+            fetch(`/sport/${id}`, {
+                method: "delete",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "_csrf": token })
+            })
+            .then((res) => {
+                if (res.ok) {
+                    window.location.replace('/sport');
+                }
+            })
+            .catch((err) => console.error(err));
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(to right, #003366, #004080);
+            color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-container h1 {
+            background-color: #0056b3;
+            padding: 15px 25px;
+            border-radius: 5px;
+            color: white;
+            font-size: 2rem;
+            display: inline-block;
+            margin: 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .goback-signout-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .goback-signout-buttons a {
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .goback-signout-buttons a:hover {
+            background-color: red;
+        }
+
+        .section-title {
+            color: #66c2ff;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 191, 255, 0.5);
+            text-align: center;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-section a {
+            color: #e5f2fa;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .content-section a:hover {
+            background-color: #003366;
+            color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ce2d2d;
+        }
+
+        .footer-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-buttons a {
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .footer-buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>SPORTS SCHEDULER</h1>
+            
+        </div>
+        <div class="content-section">
+            <div class="section-title">
+                <h1 style="color: rgb(54, 255, 84);"><%= title %></h1>
+            </div>
+            <% if (userRole === 'admin') { %>
+                <p class="text-center" style="color: #66c2ff;">
+                    <a href="edit/<%= sport.id %>"><u>Edit</u></a> | 
+                    <a href="#" onclick="deleteSport(<%= sport.id %>)"><u>Delete</u></a>
+                </p>
+            <% } %>
+            <h2 class="section-title">Upcoming Sessions</h2>
+            <%- include('upSessions.ejs') %>
+            <div class="content-section">
+                <a href="sessions/<%= sport.id %>" class="hover:bg-purple-200" style="color: greenyellow;">Create a New Session</a><br>
+                <a href="viewPreSessions/<%= sport.id %>" class="hover:bg-purple-200" style="color: greenyellow;">View Previous Sessions</a>
+            </div>
+            <h2 class="section-title">List of Created Sessions:</h2>
+            <% if (allSessionPart.length != 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Session Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < allSessionPart.length; i++) { %>
+                            <tr>
+                                <td style="background-color: black; color: rgb(113, 167, 255)"><%= allSessionPart[i].sessionName %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p class="text-center">No sessions are created</p>
+            <% } %>
+        </div>
+        <div class="footer-buttons">
+            <a href="sessions/<%= sport.id %>">Create a New Session</a>
+            <a href="viewPreSessions/<%= sport.id %>">View Previous Sessions</a>
+        </div>
+    </div>
+    <div class="goback-signout-buttons">
+        <a href="/sport">Go Back</a>
+        <a href="/signout">Sign Out</a>
+    </div>
+</body>
+
+</html>

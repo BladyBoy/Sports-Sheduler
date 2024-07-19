@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Sports Scheduler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-container h1 {
+            background-color: #006bdd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .header-container b a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header-container b a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            color: #9affd8;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgb(0, 157, 255);
+        }
+
+        .admin-functions, .available-sports {
+            margin-top: 20px;
+        }
+
+        .btn-info {
+            background-color: #00ffff;
+            border: none;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+            display: inline-block;
+            white-space: nowrap;
+            margin-bottom: 10px; /* Spacing between buttons */
+        }
+
+        .btn-info a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .btn-info a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-group-vertical {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>SPORTS SCHEDULER</h1>
+            
+        </div>
+
+        <% if (role === 'admin') { %>
+            <div class="admin-functions">
+                <h2 class="section-title">Administrative Functions:</h2>
+                <a href="createSport" class="text-sky-600"><u>Create a Sport</u></a><br>
+                <a href="viewReports" class="text-sky-600"><u>View Reports</u></a>
+            </div>
+        <% } %>
+
+        <div class="upcoming-sessions">
+            <h3 class="section-title">You have the following upcoming sessions:</h3>
+            <%- include('homeSessions.ejs') %>
+        </div>
+
+        <div class="available-sports">
+            <h3 class="section-title">List of Available Sports</h3>
+            <div class="btn-group-vertical m-3">
+                <% if (allSports.length != 0) { %>
+                    <% for (var i = 0; i < allSports.length; i++) { %>
+                        <button type="button" class="btn-info">
+                            <a href="sport/<%= allSports[i].id %>"><%= allSports[i].title %></a>
+                        </button>
+                    <% } %>
+                <% } else { %>
+                    <p>There are no available sports</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <center><b class="text-white bg-blue-600 hover:bg-red-800 font-medium rounded px-3 py-1 "><a href="/signout">Sign Out</a></b></center>
+</body>
+
+</html>

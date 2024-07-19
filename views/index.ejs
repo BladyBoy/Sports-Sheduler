@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Sports Scheduler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4a90e2, #007aff);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            gap: 40px; /* Add space between containers */
+        }
+
+        .info-container, .button-container {
+            flex: 1;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-container h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #e1e1e1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-container h2 {
+            font-size: 1.5rem;
+            color: #a1c4fd;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+        }
+
+        .button-container h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #d1d1d1;
+        }
+
+        .button-container a {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .button-container a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button-container a:last-child {
+            background-color: #00bfff;
+        }
+
+        .button-container a:last-child:hover {
+            background-color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="info-container">
+            <h1>Sports Scheduler</h1>
+            <h2>Your ultimate sports scheduling companion</h2>
+        </div>
+        <div class="button-container">
+            <h3>New to Sports Scheduler?</h3>
+            <a href="/signup">Create an Account</a>
+            <h3>Already a member?</h3>
+            <a href="/login">Sign In</a>
+        </div>
+    </div>
+</body>
+
+</html>
