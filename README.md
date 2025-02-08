@@ -21,9 +21,6 @@ This is my capstone project of Full Stack Web Development, as part of it, I deve
 ![Create a Session](https://drive.google.com/uc?export=view&id=1Iv0z1yR7pkbm6vm473ZR1N-romuBuSif)
 ![Session Details](https://drive.google.com/uc?export=view&id=1FcUbXBSY56jzDeKnA_Xvh_x-d9YI_Y7H)
 
-## Live Application
-
-[Link to the live URL](https://srija-sports-scheduler-j8vm.onrender.com)
 
 ## Installation and Setup
 
